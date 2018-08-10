@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
 void main() => runApp(new MyApp());
 
@@ -64,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    final wordPair = WordPair.random();
     return new Scaffold(
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -90,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              'You heve tapped the button this many times:',
+              wordPair.asCamelCase,
             ),
             new Text(
               '$_counter',
